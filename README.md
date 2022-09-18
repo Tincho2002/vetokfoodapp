@@ -1,3 +1,5 @@
+# The project is based on an e-commerce of dry and wet food for cats and dogs. VET-OK! FOOD also has a secondary business that includes accessories for pets. There are branches throughout the country, so shipping costs are handled locally or picked up at the branch. It can be paid by bank transfer and credit cards. Returns due to damage, breakage or poor conditions in the products received, can be processed within 15 calendar days of receiving the merchandise through the Contact form in the corresponding section.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
