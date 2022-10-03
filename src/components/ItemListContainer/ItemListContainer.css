@@ -4,8 +4,7 @@
     text-align: center;
 }
 
-.container h1, p {
+.container h1, h2, h3, p {
     text-align: center;
-    /*background-image: linear-gradient(grey, black, grey);*/
     color: rgb(233, 194, 23);
 }

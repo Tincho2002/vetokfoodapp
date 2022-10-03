@@ -1,21 +1,25 @@
 import { Container, Nav, Navbar } from "react-bootstrap";
-import CartWidget from "./CartWidget";
-import './CartWidget.css';
+import { Link } from "react-router-dom";
+import CartWidget from "./CartWidget/CartWidget";
+import './CartWidget/CartWidget.css';
 
 const NavBar = () => {
   return (
     <Navbar bg="warning" variant="warning">
       <Container>
-        <Navbar.Brand href="#home">
+        <Navbar.Brand as={Link} to='/'>
           e-commerce food for cats and dogs
-        </Navbar.Brand>
+        </Navbar.Brand>     
         <Nav className="me-auto">
-          <Nav.Link href="#home">Home</Nav.Link>
-          <Nav.Link href="#dry">Dry Food</Nav.Link>
-          <Nav.Link href="#wet">Wet Food</Nav.Link>
-          <Nav.Link href="#asccessories">Accessories</Nav.Link>
-          <Nav.Link href="#contact">Contact</Nav.Link>
-          <Nav.Link href="#about">About Us</Nav.Link>
+          <Nav.Link as={Link} to='/'>
+              Home
+          </Nav.Link>
+          <Nav.Link as={Link} to='/category/dry'>Dry Food</Nav.Link>
+          <Nav.Link as={Link} to='/category/wet'>Wet Food</Nav.Link>
+          <Nav.Link as={Link} to='/category/accessories'>Accessories</Nav.Link>
+          <Nav.Link as={Link} to='/category/sanitary'>Sanitary Stones</Nav.Link>
+          <Nav.Link as={Link} to='/category/contact'>Contact</Nav.Link>
+          <Nav.Link as={Link} to='/category/about'>About Us</Nav.Link>
         </Nav>
         <CartWidget />
       </Container>
