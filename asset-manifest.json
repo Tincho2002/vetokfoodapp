@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/vetokfoodapp-gh-pages/static/css/main.e32c9520.css",
+    "main.js": "/vetokfoodapp-gh-pages/static/js/main.57720885.js",
+    "static/js/787.5955349d.chunk.js": "/vetokfoodapp-gh-pages/static/js/787.5955349d.chunk.js",
+    "index.html": "/vetokfoodapp-gh-pages/index.html",
+    "main.e32c9520.css.map": "/vetokfoodapp-gh-pages/static/css/main.e32c9520.css.map",
+    "main.57720885.js.map": "/vetokfoodapp-gh-pages/static/js/main.57720885.js.map",
+    "787.5955349d.chunk.js.map": "/vetokfoodapp-gh-pages/static/js/787.5955349d.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e32c9520.css",
+    "static/js/main.57720885.js"
+  ]
+}
