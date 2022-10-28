@@ -6,29 +6,25 @@ import { Link } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import { useState } from 'react';
 import './Cart.css';
+import { createOrder } from "../../utils/orders";
+import OrderModal from "../Checkout/Checkout";
 
-
+const buyerMock = {
+  name: 'coderhouse',
+  phone: '1122334455',
+  email: 'coderhouse@mail.com'
+}
 
 function Cart () {
   const { cart, removeFromCart, clearCart, itemsTotal, precioTotal } = useCartContext();
   const [isActive, setActive] = useState(false);
-
+  //const [user, setUser] = useState(buyerMock);
+  const [showModal, setShowModal] = useState(false);
+  const [orderId, setOrderId] = useState();
 
 
   const handleVaciar = () =>  {
-    const Toast = Swal.mixin({
-      toast: true,
-      background: '#DFA822',
-      showConfirmButton: false,
-      timer: 2000,
-      timerProgressBar: false,
-      didOpen: (toast) => {
-        toast.addEventListener('mouseenter', Swal.stopTimer)
-        toast.addEventListener('mouseleave', Swal.resumeTimer)
-      }
-    })
-
-    Toast.fire({
+    Swal.fire({
       icon: 'success',
       title: 'Emptied Cart'
     })
@@ -44,6 +40,38 @@ function Cart () {
       })
   }
 
+  const handleOpen = () => setShowModal(true);
+
+  const handleClose = () => setShowModal(false);
+
+  //const handleBuy =  () => {
+    //const newOrder = {
+      //buyer: buyerMock,
+      //items: cart,
+      //total: precioTotal()
+    //};
+    //console.log(newOrder);
+    //createOrder(newOrder);
+  //}
+
+  const handleBuy = async () => {
+    const itemsToBuy = cart.map((item) => ( {
+      id: item.id,
+      cant: item.cant,
+      title: item.title,
+      pricex1: item.price,
+      total: item.price * item.cant,
+  }
+  ))
+    const newOrder = {
+      buyer: buyerMock,
+      items: itemsToBuy,
+      total: precioTotal()
+    };
+    const newOrderId = await createOrder(newOrder);
+    setOrderId(newOrderId);
+}
+
   useEffect(() => {
     function setTitle(title) {
       document.title = title;
@@ -51,14 +79,11 @@ function Cart () {
     setTitle("VET-OK!-FOOD -- Cart");
   }, []);
 
-
   if (cart.length === 0) {
-    return <section id="Carrito" className="py-5 text-center container">
+    return <section id="Carrito" className="py-5 text-center container">    
       <div className="row py-lg-5">
         <div className="col-12">
         <Badge className="m-1" bg="warning"><h6>THERE ARE NO ITEMS IN YOUR CART</h6></Badge>
-
-          <p></p>
           <Link to="/">
             <Button variant="btn btn-lg btn-outline-warning w-40" >
               BACK TO MENU
@@ -73,12 +98,13 @@ function Cart () {
       <section id="carrito" className="py-2 text-center container slide-in-fwd-center">
         <div className="row py-lg-2">
           <div>
+            <h2>YOUR CART FOOD</h2>
             <Badge bg="primary" className="m-1">
               <h6>TOTAL ITEMS: {itemsTotal()}</h6>
             </Badge>
             <Badge className="m-3" bg="primary">
             <h6> TOTAL COST: $ {precioTotal()}</h6>
-            </Badge>
+            </Badge>            
             <div>
               <Link to="/">
               <Button variant="btn btn-lg btn-outline-warning w-40" >
@@ -105,14 +131,22 @@ function Cart () {
                     </Card>
                   </Container>
                 )
-
               })}
             </div>
           </div>
         </div>
-        <Button className="btn btn-danger m-3" onClick={handleVaciar}> EMPTY CART</Button><Link to="/checkout"><Button className="btn btn-success m-3">GO TO PAY</Button></Link>
+        <div>
+          <span><Button variant="danger" onClick={handleVaciar}>EMPTY CART</Button> </span>    
+          <span><Button variant="success" onClick={handleOpen}>CHECKOUT</Button></span> 
+        </div>
+        <OrderModal
+          showModal={showModal}          
+          onClose={handleClose}
+          onBuy={handleBuy}
+          orderId={orderId}
+        />
       </section>
-    )
+    );
   }
 }
 

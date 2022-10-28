@@ -1,0 +1,10 @@
+.icons-redes{
+    background-image: linear-gradient(to left, rgb(36, 35, 35),rgb(36, 35, 35), rgb(201, 195, 195),rgb(36, 35, 35), rgb(36, 35, 35));
+    align-items: center;
+}
+    
+.button {
+    margin: 0.5rem;
+    padding: 0.25rem;
+    border-radius: 100%;
+}

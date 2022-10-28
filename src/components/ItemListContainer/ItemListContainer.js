@@ -21,13 +21,9 @@ const ItemListContainer = ({ greeting }) => {
       getAllProducts()
         .then((data) => setProducts(data))
         .catch((error) => console.warn(error))
-
     }
   }, [categoryId])
-
-return (
-  
-    
+return ( 
     <Container> 
     <h1 className="greeting">{greeting}</h1>
     <h2>Catalogue</h2>

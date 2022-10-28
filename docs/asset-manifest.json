@@ -1,15 +1,16 @@
 {
   "files": {
-    "main.css": "/vetokfoodapp/static/css/main.e32c9520.css",
-    "main.js": "/vetokfoodapp/static/js/main.590a826a.js",
+    "main.css": "/vetokfoodapp/static/css/main.dbf3050c.css",
+    "main.js": "/vetokfoodapp/static/js/main.676d294a.js",
     "static/js/787.5955349d.chunk.js": "/vetokfoodapp/static/js/787.5955349d.chunk.js",
+    "static/media/logov.png": "/vetokfoodapp/static/media/logov.a7aafb1fcd2c16c9664f.png",
     "index.html": "/vetokfoodapp/index.html",
-    "main.e32c9520.css.map": "/vetokfoodapp/static/css/main.e32c9520.css.map",
-    "main.590a826a.js.map": "/vetokfoodapp/static/js/main.590a826a.js.map",
+    "main.dbf3050c.css.map": "/vetokfoodapp/static/css/main.dbf3050c.css.map",
+    "main.676d294a.js.map": "/vetokfoodapp/static/js/main.676d294a.js.map",
     "787.5955349d.chunk.js.map": "/vetokfoodapp/static/js/787.5955349d.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.e32c9520.css",
-    "static/js/main.590a826a.js"
+    "static/css/main.dbf3050c.css",
+    "static/js/main.676d294a.js"
   ]
 }

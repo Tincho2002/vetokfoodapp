@@ -1,0 +1,18 @@
+.footerOrderSuccess {
+  flex-direction: column;
+  background-color: rgb(230, 230, 224);
+}
+
+.modalheader,
+.modalbody,
+.modalfooter {
+  background-color: rgb(247, 247, 240);
+}
+
+.modalfooter {
+  align-items: center;
+}
+
+.modalitem {
+  background-color: rgb(127, 221, 245);
+}
